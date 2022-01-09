@@ -4,7 +4,7 @@ import { YandexMap } from "./api/YandexMap.js";
 // MODULES
 import { userCoord } from "./modules/getUserCoord.js";
 import { forecastSearch } from "./modules/ForecastSearch.js";
-import { forecastView } from "./modules/forecastView.js";
+import { forecastView } from "./modules/ForecastView.js";
 
 import { $ } from "./utils/utils.js";
 
