@@ -31,7 +31,7 @@ class ForecastSearch {
 
     this._searchBtn.addEventListener('click', () => {
       this._notifyHandlers(this._searchInp.value.trim())
-      this._searchInp.value
+      this._searchInp.value = ''
     })
   }
 
