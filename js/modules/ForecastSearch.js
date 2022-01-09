@@ -20,7 +20,7 @@ class ForecastSearch {
       const key = e.key
 
       if (key === 'Enter') {
-        this._notifyHandlers(e.target.value)
+        this._notifyHandlers(e.target.value.trim())
         e.target.value = ''
       }
 

@@ -4,9 +4,6 @@
 :root {
   --primary-light-bg-color: rgb(242, 242, 242);
   --primary-dark-bg-color: #254255;
-  --primary-gradient-bg: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-
-  --preloader-slider-bg-color: #5ed864;
 }
 
 * {
