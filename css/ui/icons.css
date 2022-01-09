@@ -1,0 +1,20 @@
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.icon--wind {
+  background-image: url('../../assets/ui-icons/weather/wind.svg');
+}
+
+.icon--humidity {
+  background-image: url('../../assets/ui-icons/weather/humidity.svg');
+}
+
+.icon--close {
+  background-image: url('../../assets/ui-icons/close.svg');
+}

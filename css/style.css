@@ -1,0 +1,62 @@
+@import './ui/icons.css';
+@import './forecast/forecast.css';
+
+:root {
+  --primary-light-bg-color: rgb(242, 242, 242);
+  --primary-dark-bg-color: #254255;
+  --primary-gradient-bg: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+
+  --preloader-slider-bg-color: #5ed864;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+
+img {
+  font-size: 10px;
+}
+
+#main {
+  background: var(--primary-dark-bg-color);
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: 'Saira', sans-serif;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  min-height: 400px;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 768px) {
+  #main {
+    padding: 0;
+  }
+}

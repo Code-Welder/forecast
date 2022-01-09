@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather forecast</title>
+
+  <!-- FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- SCRIPTS -->
+  <script
+    src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=e38a343f-81e3-4f77-a0b8-be43bdaf9b9d"
+    type="text/javascript"></script>
+
+  <script defer type="module" src="./js/index.js"></script>
+</head>
+<body>
+  <main id="main">
+    <div class="container">
+
+      <div id="forecast" class="forecast">
+        <!-- ALERT -->
+        <div class="forecast__alert hidden" data-forecast-alert>
+          <div class="alert-msg">City not found</div>
+          <button class="close-alert" aria-label="close alert">
+            <span class="icon icon--close"></span>
+          </button>
+        </div>
+
+        <!-- SEARCH -->
+        <div id="search" class="search js-forecast-search">
+          <label class="search__inner">
+            <input type="text" name="search-inp" class="search__inp" placeholder="enter the city name">
+            <button class="search__btn" aria-label="search">
+              <svg class="search-icon" width="20" height="21" viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="search-icon__path" d="M14 14L19 20M16 8.5V8.5C16 4.35786 12.6421 1 8.5 1V1C4.35786 1 1 4.35786 1 8.5V8.5C1 12.6421 4.35786 16 8.5 16V16C12.6421 16 16 12.6421 16 8.5Z" stroke-linecap="round" stroke-width="2"/>
+                </svg>
+            </button>
+          </label>
+        </div>
+
+         <!-- FC-BODY -->
+        <div class="forecast__body">
+          <h2 class="forecast__city-name" data-forecast-city></h2>
+          <div class="forecast__date" data-forecast-date></div>
+
+          <!-- FC-WEATHER -->
+          <div class="weather onload">
+            <div class="weather__inner">
+              <img src="" alt="weather icon" class="weather__icon js-weather-icon">
+              <div class="weather__temp" data-weather-temp>0</div>
+              <div class="weather__feels">
+                feels: <span class="weather__feels-temp" data-weather-feels></span><sup>*</sup>
+              </div>
+              <div class="weather__descr" data-weather-descr></div>
+            </div>
+          </div>
+          <!-- FC-DETAILS -->
+          <ul class="forecast-details">
+            <li class="forecast-details__item">
+              <span class="forecast-details__item-icon icon icon--wind"></span>
+              <div class="forecast-details__item-name">Wind</div>
+
+              <div class="forecast-details__item-info">
+                <span data-wind-speed></span> m/s
+              </div>
+            </li>
+
+            <li class="forecast-details__item">
+              <span class="forecast-details__item-icon icon icon--humidity"></span>
+              <div class="forecast-details__item-name">Humidity</div>
+
+              <div class="forecast-details__item-info">
+                <span data-humidity></span>%
+              </div>
+            </li>
+          </ul>
+        </div>
+
+         <!-- MAP -->
+        <div class="map-wrapper">
+          <div id="map"></div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
