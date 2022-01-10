@@ -2,11 +2,13 @@
 import { weatherApi } from "./api/Weather.js";
 import { YandexMap } from "./api/YandexMap.js";
 // MODULES
-import { userCoord } from "./modules/getUserCoord.js";
+import { userCoord } from "./modules/UserCoord.js";
 import { forecastSearch } from "./modules/ForecastSearch.js";
 import { forecastView } from "./modules/ForecastView.js";
 
-import { $ } from "./utils/utils.js";
+import { $, loadJson } from "./utils/utils.js";
+
+const cityNamesPath = './js/json/cityNames.json'
 
 const DEFAULT_CITY = {
   name: 'Moscow',
@@ -27,7 +29,7 @@ class Forecast {
         this._loadForecast({coord})
       })
       .catch(() => {
-        // if user denied or something went wrong
+        // if user denied or something went wrong with browser api
         userCoord.getByGeoApi()
         .then(coord => {
           this._loadForecast({coord})
@@ -35,7 +37,11 @@ class Forecast {
         .catch(() => {
           this._loadForecast({cityName: this._currCity})
         })
+      })
 
+    loadJson(cityNamesPath)
+      .then(cityNames => {
+        forecastSearch.addHintList(cityNames)
       })
 
     forecastSearch.onSearch(

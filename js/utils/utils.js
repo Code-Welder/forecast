@@ -14,3 +14,8 @@ export const getLocalDateStr = () => {
       )
   )
 }
+
+export const loadJson = async(path) => {
+  const result = await fetch(path)
+  return await result.json()
+}
